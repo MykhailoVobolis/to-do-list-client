@@ -7,7 +7,7 @@ axios.defaults.baseURL = "https://to-do-list-server-dgf5.onrender.com/";
 export const fetchTasks = createAsyncThunk("tasks/fetchTasks", async (filterParams, thunkAPI) => {
   try {
     const response = await axios.get("/tasks", {
-      params: filterParams,
+      params: { description: filterParams },
     });
 
     return response.data.data;
