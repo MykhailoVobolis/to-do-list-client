@@ -1,6 +1,7 @@
 .form {
   display: flex;
   gap: 4px;
+  position: relative;
 }
 
 .field {
@@ -11,4 +12,12 @@
 
 .field:focus {
   outline-color: #1976d2;
+}
+
+.error {
+  font-size: 14px;
+  position: absolute;
+  top: 44px;
+  left: 558px;
+  color: red;
 }
