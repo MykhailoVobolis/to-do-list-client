@@ -16,8 +16,6 @@ export default function App() {
   const error = useSelector(selectError);
   const filterText = useSelector(selectTextFilter);
 
-  // console.log(filterText);
-
   useEffect(() => {
     dispatch(fetchTasks(filterText));
   }, [filterText]);
