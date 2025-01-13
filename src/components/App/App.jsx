@@ -1,9 +1,11 @@
-import css from "./App.module.css";
+import Layout from "../Layout/Layout.jsx";
+import TaskForm from "../TaskForm/TaskForm.jsx";
 
 export default function App() {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <Layout>
+      <h1>To Do List</h1>
+      <TaskForm />
+    </Layout>
   );
 }
