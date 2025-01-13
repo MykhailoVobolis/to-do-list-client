@@ -20,6 +20,7 @@ export const fetchTasks = createAsyncThunk("tasks/fetchTasks", async (filterPara
 export const addTask = createAsyncThunk("tasks/addTask", async (description, thunkAPI) => {
   try {
     const response = await axios.post("/tasks", { description });
+
     return response.data.data;
   } catch (error) {
     const errorMessage = handleError(error);
@@ -29,8 +30,9 @@ export const addTask = createAsyncThunk("tasks/addTask", async (description, thu
 
 export const deleteTask = createAsyncThunk("tasks/deleteTask", async (taskId, thunkAPI) => {
   try {
-    await axios.delete(`/tasks/${taskId}`);
-    return { id: taskId };
+    const response = await axios.delete(`/tasks/${taskId}`);
+
+    return response.data.data;
   } catch (error) {
     const errorMessage = handleError(error);
     return thunkAPI.rejectWithValue({ message: errorMessage });
